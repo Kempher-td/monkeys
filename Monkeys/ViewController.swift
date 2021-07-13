@@ -35,17 +35,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         monkeysList = Parser.singletone.parseNamesFromJSON()?.list ?? []
-
         picker.delegate = self
         picker.dataSource = self
 
         selectedMonkeyTextField.inputView = picker
         selectedMonkeyTextField.inputAccessoryView = toolbar()
-        var string: NSMutableAttributedString = pickedMonkeyLabel.attributedText?.mutableCopy() as? NSMutableAttributedString
-        string.addAttribute(.link, value: "https://google.com", range: NSRange(location: 6, length: string.length - 6))
-        
-        pickedMonkeyLabel.attributedText = string
     }
 }
 
@@ -77,8 +74,22 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
-extension ViewController: UITextViewDelegate {
-    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        <#code#>
+extension ViewController: UITextViewDelegate, UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let currentName = monkeysList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        
+        cell?.textLabel?.text = currentName
+        return cell ?? UITableViewCell()
     }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        monkeysList.count
+    }
+    
 }
