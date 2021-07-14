@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C4A3B244269DF91800AD3273 /* JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = C4A3B243269DF91800AD3273 /* JSON.json */; };
+		C4A3B246269ED08900AD3273 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3B245269ED08900AD3273 /* TableViewCell.swift */; };
 		EDD4B1672682421600DAC358 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4B1662682421600DAC358 /* AppDelegate.swift */; };
 		EDD4B1692682421600DAC358 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4B1682682421600DAC358 /* SceneDelegate.swift */; };
 		EDD4B16B2682421600DAC358 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4B16A2682421600DAC358 /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		C4A3B243269DF91800AD3273 /* JSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = JSON.json; path = ../../../../var/folders/hv/kb8nqg6j51l5q9ws4qq4m4jm0000gn/T/ru.keepcoder.Telegram/JSON.json; sourceTree = "<group>"; };
+		C4A3B245269ED08900AD3273 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		EDD4B1632682421600DAC358 /* Monkeys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monkeys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD4B1662682421600DAC358 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD4B1682682421600DAC358 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				EDD4B1682682421600DAC358 /* SceneDelegate.swift */,
 				EDD4B16A2682421600DAC358 /* ViewController.swift */,
 				EDD4B16C2682421600DAC358 /* Main.storyboard */,
+				C4A3B245269ED08900AD3273 /* TableViewCell.swift */,
 				EDD4B16F2682421800DAC358 /* Assets.xcassets */,
 				EDD4B1712682421800DAC358 /* LaunchScreen.storyboard */,
 				EDD4B1742682421800DAC358 /* Info.plist */,
@@ -271,6 +274,7 @@
 				EDD4B19B268244FA00DAC358 /* Parser.swift in Sources */,
 				EDD4B16B2682421600DAC358 /* ViewController.swift in Sources */,
 				EDD4B1672682421600DAC358 /* AppDelegate.swift in Sources */,
+				C4A3B246269ED08900AD3273 /* TableViewCell.swift in Sources */,
 				EDD4B19D2682453700DAC358 /* Monkeys.swift in Sources */,
 				EDD4B1692682421600DAC358 /* SceneDelegate.swift in Sources */,
 			);

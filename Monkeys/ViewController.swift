@@ -11,10 +11,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var pickedMonkeyLabel: UILabel!
     @IBOutlet weak var selectedMonkeyTextField: UITextField!
-    var monkeysList: [String] = []
     let picker = UIPickerView()
-
-    func toolbar() -> UIToolbar {
+    //var monkeysList:[(monkey: [String],location: [String])] = []
+    let monkeysList = (Parser.singletone.parseNamesFromJSON()?.list ?? [],Parser.singletone.parseNamesFromJSON()?.location ?? [])
+    
+   /* func toolbar() -> UIToolbar {
         let toolbar = UIToolbar()
         toolbar.barStyle = .default
         toolbar.sizeToFit()
@@ -26,23 +27,20 @@ class ViewController: UIViewController {
         toolbar.setItems([done],
                          animated: false)
         return toolbar
-    }
+    }*/
 
-    @objc func selectItem() {
-        selectedMonkeyTextField.text = "\(picker.selectedRow(inComponent: 0) + 1) " + monkeysList[picker.selectedRow(inComponent: 1)]
-        selectedMonkeyTextField.resignFirstResponder()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        monkeysList = Parser.singletone.parseNamesFromJSON()?.list ?? []
+       // monkeysList.append((monkey: Parser.singletone.parseNamesFromJSON()?.list ?? [], location: Parser.singletone.parseNamesFromJSON()?.location ?? []))
+        
         picker.delegate = self
         picker.dataSource = self
 
         selectedMonkeyTextField.inputView = picker
-        selectedMonkeyTextField.inputAccessoryView = toolbar()
+        //selectedMonkeyTextField.inputAccessoryView = toolbar()
     }
 }
 
@@ -56,7 +54,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         case 0:
             return 10
         case 1:
-            return monkeysList.count
+            return monkeysList.0.count
         default:
             return 0
         }
@@ -67,7 +65,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         case 0:
             return "\(row + 1)"
         case 1:
-            return monkeysList[row]
+            return monkeysList.0.first
         default:
             return ""
         }
@@ -76,10 +74,11 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
 extension ViewController: UITextViewDelegate, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let currentName = monkeysList[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        
-        cell?.textLabel?.text = currentName
+        let currentName = monkeysList.self
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? TableViewCell
+  
+        cell?.MonkeyNames.text = currentName.0[indexPath.row]
+        cell?.MonkeyLocation.text = currentName.1[indexPath.row]
         return cell ?? UITableViewCell()
     }
     
@@ -89,7 +88,7 @@ extension ViewController: UITextViewDelegate, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        monkeysList.count
+        return monkeysList.0.count
     }
     
 }

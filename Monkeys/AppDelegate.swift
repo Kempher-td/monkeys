@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let monkeysList = Parser.singletone.parseNamesFromJSON()?.list ?? []
+        let monkeysList = (Parser.singletone.parseNamesFromJSON()?.list ?? [],Parser.singletone.parseNamesFromJSON()?.location ?? [])
         print(monkeysList)
         return true
     }

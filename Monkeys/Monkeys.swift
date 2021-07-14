@@ -9,4 +9,5 @@ import Foundation
 
 class Monkeys: Codable {
     let list: [String]
+    let location: [String]
 }

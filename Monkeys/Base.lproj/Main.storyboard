@@ -55,22 +55,37 @@
                                     <constraint firstAttribute="height" constant="364" id="L7Z-QZ-9R9"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="8sb-nX-573" style="IBUITableViewCellStyleDefault" id="tMx-uk-cv4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="tMx-uk-cv4" customClass="TableViewCell" customModule="Monkeys" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tMx-uk-cv4" id="8kM-q9-1AS">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8sb-nX-573">
-                                                    <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ic1-wF-h58">
+                                                    <rect key="frame" x="20" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Yk-Rc-kgN">
+                                                    <rect key="frame" x="312" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="7Yk-Rc-kgN" secondAttribute="trailing" constant="20" symbolic="YES" id="67m-Zd-tuH"/>
+                                                <constraint firstItem="Ic1-wF-h58" firstAttribute="leading" secondItem="8kM-q9-1AS" secondAttribute="leading" constant="20" symbolic="YES" id="H7d-U2-mmh"/>
+                                                <constraint firstItem="Ic1-wF-h58" firstAttribute="centerY" secondItem="8kM-q9-1AS" secondAttribute="centerY" id="WOr-jp-pDK"/>
+                                                <constraint firstItem="7Yk-Rc-kgN" firstAttribute="centerY" secondItem="8kM-q9-1AS" secondAttribute="centerY" id="YJE-Hm-oli"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="MonkeyLocation" destination="7Yk-Rc-kgN" id="w4P-eG-9HY"/>
+                                            <outlet property="MonkeyNames" destination="Ic1-wF-h58" id="Nee-V4-OSw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
